@@ -14,7 +14,7 @@ interface EscribaniaTableColumn {
 @Component({
   selector: 'lib-fullMaterialTable',
   template: `
-    <div id="overlay" (click)="closeOverlay()"></div>
+    <div id="overlay" (click)="closeOverlay()" [ngClass]="{'d-none': !editColumns}"></div>
     <div class="mat-elevation-z8 border-top-left-radius">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 border-top-left-radius" matSort >
         <ng-container [matColumnDef]="column.name" *ngFor="let column of columns"  class="tr-header">
@@ -64,6 +64,9 @@ interface EscribaniaTableColumn {
   `,
   styles: [
     `
+    .d-none {
+      display: none;
+    }
     #overlay {
       position: absolute;
       width: 100%;

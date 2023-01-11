@@ -2,23 +2,57 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
-## Code scaffolding
+## How to Use
 
-Run `ng generate component component-name --project fullMaterialTable` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project fullMaterialTable`.
-> Note: Don't forget to add `--project fullMaterialTable` or else it will be added to the default project in your `angular.json` file. 
+###### Step 1 - Install
 
-## Build
+You should run ** npm i full-material-table **
 
-Run `ng build fullMaterialTable` to build the project. The build artifacts will be stored in the `dist/` directory.
+###### Step 2 - Import Corresponding Module
+```
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
 
-## Publishing
+import { FullMaterialTableModule } from 'full-material-table';
 
-After building your library with `ng build fullMaterialTable`, go to the dist folder `cd dist/full-material-table` and run `npm publish`.
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FullMaterialTableModule, 
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-## Running unit tests
 
-Run `ng test fullMaterialTable` to execute the unit tests via [Karma](https://karma-runner.github.io).
+###### Step 3 - Use component 
 
-## Further help
+```
+ <full-material-table
+  [data]="rows"
+  [columns]="columns"
+  [filter]="''">
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    <ng-template let-row #actions>
+      <div class="d-flex justify-content-start align-items-center actions-td">
+        <button mat-mini-fab color="primary" (click)="getRowData(row)">
+          <mat-icon>edit</mat-icon>
+        </button>        
+      </div>
+    </ng-template>
+  </full-material-table>
+```
+
+
+## @Inputs 
+
+** data ** : Here you should pass the corresponding rows to the table
+** columns ** : Here you should pass the corresponding columns to the table
+** filter ** : Here you should pass the corresponding filter to the table
+** inside content ** : Here you should pass the corresponding dynamic content for the actions column

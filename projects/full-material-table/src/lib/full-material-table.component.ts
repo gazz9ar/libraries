@@ -12,11 +12,11 @@ interface EscribaniaTableColumn {
 }
 
 @Component({
-  selector: 'lib-fullMaterialTable',
+  selector: 'full-material-table',
   template: `
     <div id="overlay" (click)="closeOverlay()" [ngClass]="{'d-none': !editColumns}"></div>
     <div class="mat-elevation-z8 border-top-left-radius">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 border-top-left-radius" matSort >
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort >
         <ng-container [matColumnDef]="column.name" *ngFor="let column of columns"  class="tr-header">
             <ng-container *ngIf="column.name != 'actions'">
                 <th mat-header-cell mat-sort-header *matHeaderCellDef > {{column.name}} </th>
@@ -100,12 +100,7 @@ interface EscribaniaTableColumn {
     }
     .border-top-left-radius {
         border-top-left-radius: 10px;
-    }
-    .blue-bg {
-        background-color: #2699FB;
-        color: #fff !important;    
-      
-    }
+    }  
     .tw {
         color: #fff;
     }

@@ -3,3 +3,4 @@
  */
 
 export * from './lib/full-material-table.module';
+export * from './lib/full-material-table.component';

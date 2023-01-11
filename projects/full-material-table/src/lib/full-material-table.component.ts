@@ -39,11 +39,11 @@ interface EscribaniaTableColumn {
                         </section>
                     </div>
                 </th>
-                <td mat-cell *matCellDef="let element" > 
+                <td mat-cell *matCellDef="let row" > 
                     <ng-container
                         *ngIf="actionsTemplateRef"
                         [ngTemplateOutlet]="actionsTemplateRef"
-                        [ngTemplateOutletContext]="{$implicit: column}"
+                        [ngTemplateOutletContext]="{$implicit: row}"
                     >
                     </ng-container>                
                 </td>

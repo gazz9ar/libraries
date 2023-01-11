@@ -8,6 +8,9 @@
     "strict": true,
     "noImplicitOverride": true,
     "paths": {
+      "custom-button": [
+        "dist/custom-button"
+      ],
       "fullMaterialTable": [
         "dist/full-material-table"
       ]
